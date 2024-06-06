@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BrickExchange | Home</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">        <script src="js/utils.js"></script>
+        <script src="utils.js"></script>
+        <script src="api.js"></script>
+        <script src="cart.js"></script>
+        <script defer src="main.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="/imgs/logo.png" alt="BrickExchange"></a>
+            <div id="actions">
+                <a href="/">Home</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" id="login">LOG IN</a>
+                <a href="#" id="view-cart">VIEW CART</a>
+            </div>
+        </header>
+        <main id="product-view">
+            <div class="flex-column" id="product-view-container">
+                <h2>Products</h2>
+                <label>
+                    Category:
+                    <select id="categories">
+                        <option value="All">All</option>
+                    </select>
+                </label>
+                <section id="products" class="hidden">
+                    <!-- Images sourced from BrickLink -->
+
+                </section>
+            </div>
+            <div class="hidden flex-column" id="cart-container">
+                <div id="exit-btn">✕</div>
+                <strong>Cart</strong>
+                <section class="flex-column" id="cart-items"></section>
+                <span class="bold">Total: </span><span id="total">$0</span>
+                <br>
+                <a class="btn" href="checkout.html">Checkout</a>
+                <a class="btn" id="empty-cart">Empty Cart</a>
+            </div>
+        </main>
+        <footer>
+            <span>Images sourced from Rebrickable. Fonts from Google Fonts.</span>
+        </footer>
+    </body>
+</html>

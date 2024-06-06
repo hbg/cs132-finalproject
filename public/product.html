@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BrickExchange | Product View</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="form.css">
+        <link rel="stylesheet" href="product.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="utils.js"></script>
+        <script src="api.js"></script>
+        <script defer src="cart.js"></script>
+        <script defer src="product.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="/imgs/logo.png" alt="BrickExchange"></a>
+            <div id="actions">
+                <a href="/">Home</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" id="login">LOG IN</a>
+                <a href="#" id="view-cart">VIEW CART</a>
+            </div>
+        </header>
+        <main>
+            <div class="hidden flex-column" id="cart-container">
+                <div id="exit-btn">✕</div>
+                <strong>Cart</strong>
+                <section class="flex-column" id="cart-items"></section>
+                <span class="bold">Total: </span><span id="total">$0</span>
+                <br>
+                <a class="btn" href="checkout.html">Checkout</a>
+                <a class="btn" id="empty-cart">Empty Cart</a>
+            </div>
+            <article>
+                <a id="back-container" href="index.html" class="flex-column">
+                    ← Go Back
+                </a>
+                <h1></h1>
+                <!-- Source:
+                    https://www.bricklink.com/v2/catalog/catalogitem.page?S=75192-1#T=S&O={%22iconly%22:0}
+
+                    BrickLink
+                -->
+                <img src=""
+                     alt="UCS Millennium Falcon">
+                <h2></h2>
+                In stock: <span></span>
+                <p>
+                </p>
+                <!-- Will extend to add this to the cart -->
+            </article>
+            <!-- Will extend to add a shopping cart section if items have been added -->
+        </main>
+        <footer>
+            <span>Images sourced from Rebrickable. Fonts from Google Fonts.</span>
+        </footer>
+    </body>
+</html>

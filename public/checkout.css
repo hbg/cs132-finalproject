@@ -1,0 +1,56 @@
+/*
+    Author: Harris Beg
+    CS 132 Spring 2024
+    Date: June 6, 2024
+
+    This is the checkout.css page for the BrickExchange storefront.
+    It is used by the homepage for more specific styling not relevant
+    to other pages.
+*/
+main > section {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+table {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+#total-text {
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+thead {
+    background-color: lightgrey;
+}
+
+td {
+    text-align: center;
+}
+
+form > input {
+    width: 100%;
+}
+
+main > section {
+    width: 50%;
+}
+
+input, label, textarea {
+    margin: 0;
+}
+
+main section {
+    overflow: revert;
+}
+
+.flex-row > div {
+    flex: 1 1 0;
+}
+
+#card-number-container {
+    flex: 2 1 0;
+}

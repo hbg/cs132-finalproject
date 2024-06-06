@@ -1,0 +1,40 @@
+/*
+    Author: Harris Beg
+    CS 132 Spring 2024
+    Date: June 6, 2024
+
+    This is the product.css page for the BrickExchange storefront.
+    It is used by the product view page for more specific styling not relevant
+    to other pages.
+*/
+article img {
+    max-width: 500px;
+}
+
+article img, article p {
+    width: 60%;
+}
+
+main > article {
+    padding: 0;
+}
+
+article h2 {
+    color: forestgreen;
+    font-size: 24pt;
+}
+
+article p {
+    font-size: 16pt;
+}
+
+#back-container {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    justify-content: center;
+}

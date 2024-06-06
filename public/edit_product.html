@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BrickExchange | Edit Product</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="form.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="utils.js"></script>
+        <script src="api.js"></script>
+        <script src="cart.js"></script>
+        <script defer src="edit_product.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="/imgs/logo.png" alt="BrickExchange"></a>
+            <div id="actions">
+                <a href="/">Home</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" id="login">LOG IN</a>
+                <a href="#" id="view-cart">VIEW CART</a>
+            </div>
+        </header>
+        <main>
+            <section>
+                <div class="flex-column hidden" id="cart-container">
+                    <div id="exit-btn">✕</div>
+                    <strong>Cart</strong>
+                    <section class="flex-column" id="cart-items"></section>
+                    <span class="bold">Total: </span><span id="total">$0</span>
+                    <br>
+                    <a class="btn" href="checkout.html">Checkout</a>
+                    <a class="btn" id="empty-cart">Empty Cart</a>
+                </div>
+                <h1>Edit Product</h1>
+                <div id="message-area" class="hidden">
+                </div>
+                <form>
+                    <label for="title">
+                        Title
+                    </label><br>
+                    <input type="text" id="title" name="title"
+                     placeholder="Type the product title" required>
+
+                    <label for="image-url">
+                        Image URL
+                    </label><br>
+                    <input type="url" id="image-url"
+                            name="image-url" placeholder="Type the product's image URL"
+                            required></input>
+                    <label for="description">
+                        Description
+                    </label><br>
+                    <textarea id="description"
+                            name="description" placeholder="Type the product's description"
+                            required></textarea>
+                    <label for="category">
+                        Category
+                    </label><br>
+                    <input type="text" id="category" name="category"
+                        placeholder="Type the product category" required>
+                    <label for="price">
+                        Price (USD)
+                    </label><br>
+                    <input type="number" id="price" name="price"
+                        placeholder="Type the product price" required>
+                    <label for="quantity">
+                        Quantity
+                    </label><br>
+                    <input type="number" id="quantity" name="quantity"
+                        placeholder="Type the product quantity" required>
+                    <button type="submit">Submit Edits</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <span>Images sourced from Rebrickable. Fonts from Google Fonts.</span>
+        </footer>
+    </body>
+</html>

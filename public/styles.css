@@ -1,0 +1,198 @@
+ /*
+    Author: Harris Beg
+    CS 132 Spring 2024
+    Date: June 6, 2024
+
+    This is the styles.css page for the BrickExchange storefront.
+    It is used by all pages in the storefront to to give the site a consistent
+    look and feel.
+*/
+
+body, main, main article, .flex-column {
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Jost', Arial, Helvetica, sans-serif;
+}
+
+header, footer, body, main, main article, .flex-column, .flex-row {
+    display: flex;
+}
+header, body, main {
+    justify-content: space-between;
+}
+
+header {
+    flex-wrap: wrap;
+}
+
+main article, footer {
+    justify-content: center;
+}
+
+button:hover, .btn, #exit-btn {
+    cursor: pointer;
+}
+
+header, footer, .flex-row {
+    flex-direction: row;
+}
+
+header, footer {
+    background-color: rgb(10, 7, 7);
+}
+
+header {
+    height: auto;
+}
+
+footer, header img {
+    height: 60px;
+}
+
+main section {
+    overflow: auto;
+}
+
+header, footer, main article {
+    align-items: center;
+}
+
+#login, #view-cart {
+    border: 4px solid white;
+    margin-left: 16px;
+}
+
+header, footer, .btn {
+    padding: 8px 16px;
+}
+
+button, #login, header a, #cart-container {
+    padding: 8px;
+}
+
+button, header a, #login, #exit-btn {
+    font-size: 12pt;
+    margin: 4px;
+    border-radius: 4px;
+}
+
+header a, header button, footer, article button, .btn {
+    color: white;
+}
+
+header a, a.btn, #cart-container > a {
+    text-decoration: none;
+}
+
+header a, button {
+    transition: 200ms ease-in-out all;
+}
+
+main > section, #actions a:hover, #cart-container {
+    background-color: white;
+}
+
+.btn, #exit-btn {
+    text-align: center;
+}
+
+header a:hover {
+    color: black;
+}
+
+.btn {
+    width: 100%;
+    border: 0;
+}
+
+#cart-container, table {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2),
+                0 6px 24px 0 rgba(0,0,0,0.2);
+}
+
+header button {
+    background-color: black;
+}
+
+button:disabled {
+    background-color: darkgrey;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.price-text {
+    color: green;
+}
+
+.btn {
+    background-color: green;
+    margin: 4px;
+}
+
+.btn:hover {
+    background-color: darkgreen;
+}
+
+.btn, #cart-container > strong {
+    font-size: 16pt;
+}
+
+footer {
+    margin-bottom: 0;
+    margin-top: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.striped-background {
+    background:
+        repeating-linear-gradient( 45deg, white, white 10px,
+                                        lightgray 10px, lightgray 20px);
+}
+
+#cart-container {
+    width: 20%;
+    min-height: 100px;
+    right: 0;
+}
+
+#products-article, #cart-container {
+    min-width: 200px;
+}
+
+#cart-container > strong {
+    margin-top: 16px;
+}
+
+#cart-container > strong {
+    text-decoration: underline;
+}
+
+#cart-container > a {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+#empty-cart {
+    background-color: darkred;
+}
+
+#cart-container, #exit-btn {
+    position: absolute;
+}
+
+#exit-btn {
+    padding: 4px;
+    height: 20px;
+    aspect-ratio: 1;
+    right: 8px;
+    color: grey;
+}

@@ -1,0 +1,71 @@
+/*
+    Author: Harris Beg
+    CS 132 Spring 2024
+    Date: June 6, 2024
+
+    This is the form.css page for the BrickExchange storefront.
+    It is used by pages with forms to give the site a consistent
+    look and feel.
+*/
+
+main > section {
+    width: 30%;
+    min-height: 200px;
+    min-width: 300px;
+}
+
+main > article {
+    width: 60%;
+}
+
+main > section, main > article, button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h1, button, article > div {
+    text-align: center;
+}
+
+label, input, textarea, article > div {
+    width: 80%;
+    margin-left: 10%;
+}
+
+button {
+    width: 40%;
+}
+
+main > section, main > article, input, textarea, #message-area, article > div {
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+main > section, main > article {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2),
+                0 6px 24px 0 rgba(0,0,0,0.2);
+}
+
+input, textarea {
+    border: 4px solid black;
+}
+
+.failure-message {
+    background-color: lightcoral;
+    color: darkred;
+}
+
+.success-message {
+    background-color: lightgreen;
+    color: green;
+}

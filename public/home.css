@@ -1,0 +1,81 @@
+/*
+    Author: Harris Beg
+    CS 132 Spring 2024
+    Date: June 6, 2024
+
+    This is the home.css page for the BrickExchange storefront.
+    It is used by the homepage for more specific styling not relevant
+    to other pages.
+*/
+#product-view h2 {
+    text-decoration: underline;
+}
+
+#products {
+    padding: 16px;
+}
+
+#products article, article button {
+    font-size: 16pt;
+}
+
+article button {
+    background-color: green;
+}
+
+article button:hover {
+    background-color: darkgreen;
+}
+
+#products article:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.4),
+                0 6px 24px 0 rgba(0,0,0,0.4);
+    cursor: pointer;
+
+}
+
+#products article button, #products article img {
+    width: 100%;
+    border: 0;
+}
+
+#products article img {
+    max-height: 200px;
+}
+
+#products {
+    margin-bottom: 16px;
+}
+
+#products {
+    width: 80%;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+
+#product-view h2 {
+    font-size: 36pt;
+}
+
+#products article {
+    padding: 8px;
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2),
+                0 6px 24px 0 rgba(0,0,0,0.2);
+    width: 25%;
+    margin: 8px;
+    border-radius: 8px;
+    align-self: stretch;
+    color: black;
+    text-align: center;
+    transition: 200ms ease-in-out all;
+    min-width: 200px;
+}
+
+#product-view-container {
+    align-items: center;
+}
+
+#product-view section {
+    justify-content: space-evenly;
+}

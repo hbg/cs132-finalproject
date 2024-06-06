@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>BrickExchange | Checkout</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="form.css">
+        <link rel="stylesheet" href="checkout.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="utils.js"></script>
+        <script src="api.js"></script>
+        <script src="cart.js"></script>
+        <script defer src="checkout.js"></script>
+    </head>
+    <body>
+        <header>
+            <a href="index.html"><img src="/imgs/logo.png" alt="BrickExchange"></a>
+            <div id="actions">
+                <a href="/">Home</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="login.html" id="login">LOG IN</a>
+                <a href="#" id="view-cart">VIEW CART</a>
+            </div>
+        </header>
+        <main>
+            <div class="hidden flex-column" id="cart-container">
+                <div id="exit-btn">✕</div>
+                <strong>Cart</strong>
+                <section class="flex-column" id="cart-items"></section>
+                <span class="bold">Total: </span><span id="total">$0</span>
+                <br>
+                <a class="btn" href="checkout.html">Checkout</a>
+                <a class="btn" id="empty-cart">Empty Cart</a>
+            </div>
+            <section>
+                <div id="message-area" class="hidden">
+                </div>
+                <h1>Checkout</h1>
+                <div id="checkout-area">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Per Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                    <span id="total-text"></span>
+                    <form>
+                        <section class="flex-row">
+                            <div>
+                                <label for="first_name">
+                                    First Name
+                                </label><br>
+                                <input type="text" id="first_name" name="first_name"
+                                placeholder="John" required>
+                            </div>
+                            <div>
+                                <label for="last_name">
+                                    Last Name
+                                </label><br>
+                                <input type="text" id="last_name" name="last_name"
+                                placeholder="Doe" required>
+                            </div>
+                        </section>
+                        <label for="email">
+                            Email
+                        </label><br>
+                        <input type="email" id="email" name="email"
+                        placeholder="Type your email" required>
+
+                        <section class="flex-row" id="card-details">
+                            <div id="card-number-container">
+                                <label for="card-number">
+                                    Card Number
+                                </label><br>
+                                <input type="text" id="card-number" name="card-number"
+                                placeholder="4444-4444-4444-4444" required>
+                            </div>
+                            <div>
+                                <label for="cvc">
+                                    CVC
+                                </label><br>
+                                <input type="text" id="cvc" name="cvc"
+                                placeholder="000" required>
+                            </div>
+                            <div>
+                                <label for="expiration">
+                                    Expiration
+                                </label><br>
+                                <input type="text" id="expiration" name="expiration"
+                                placeholder="04/27" required>
+                            </div>
+                        </section>
+                        <label for="billing-address">
+                            Billing Address
+                        </label><br>
+                        <input type="text" id="billing-address" name="billing-address"
+                            placeholder="1600 Amphitheatre Parkway, Mountain View, CA, United States" required>
+                            <label for="shipping-address">
+                                Shipping Address
+                            </label><br>
+                            <input type="text" id="shipping-address" name="shipping-address"
+                                placeholder="1600 Amphitheatre Parkway, Mountain View, CA, United States" required>
+
+                        <button type="submit">SUBMIT ORDER</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <span>Images sourced from Rebrickable. Fonts from Google Fonts.</span>
+        </footer>
+    </body>
+</html>
