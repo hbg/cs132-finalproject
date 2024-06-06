@@ -9,7 +9,7 @@
 */
 
 CREATE DATABASE IF NOT EXISTS storedb;
-USE storedb;
+USE heroku_8ad1b008d1bd7df;
 
 CREATE TABLE IF NOT EXISTS admin_accounts (
     email VARCHAR(255) NOT NULL,
