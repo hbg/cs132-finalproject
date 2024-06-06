@@ -65,7 +65,7 @@ async function getDB() {
 
 app.get('/products', async (req, res, next) => {
     let storeName = req.query.store_name;
-    if (!(storeName)) {
+    if (!storeName) {
         res.status(CLIENT_ERR_CODE); // re-route to errorHandler, exiting this function
         next(Error("Missing GET parameter: store name."));
     }
@@ -90,7 +90,7 @@ app.get('/products', async (req, res, next) => {
 
 app.get('/product', async (req, res, next) => {
     let productId = req.query.product_id;
-    if (!(productId)) {
+    if (!productId) {
         res.status(CLIENT_ERR_CODE); // re-route to errorHandler, exiting this function
         next(Error("Missing GET parameter: product_id."));
     }
@@ -116,9 +116,9 @@ app.get('/product', async (req, res, next) => {
 app.get('/products/category', async (req, res, next) => {
     let storeName = req.query.store_name;
     let category = req.query.category;
-    if (!(storeName)) {
+    if (!(storeName && category)) {
         res.status(CLIENT_ERR_CODE); // re-route to errorHandler, exiting this function
-        next(Error("Missing GET parameter: store name."));
+        next(Error("Missing GET parameter: store name and category."));
     }
     else {
         let db;

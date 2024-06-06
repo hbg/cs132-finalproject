@@ -189,10 +189,13 @@
             if (window.localStorage.getItem("cart")) {
                 cart = JSON.parse(window.localStorage.getItem("cart"));
             }
-            addToCart(cart, productId, quantity);
-            if (cart[productId] == quantity)
+            if (cart[productId] == quantity) {
                 this.disabled = true;
-            populateCart(cart, allProducts);
+            } else {
+                addToCart(cart, productId, quantity);
+                populateCart(cart, allProducts);
+            }
+            showCart();
         });
         articleDiv.addEventListener("click", function () {
             window.location.href = BASE_URL + `product.html?product_id=${productId}`;

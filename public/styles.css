@@ -189,7 +189,7 @@ footer {
 }
 
 #cart-container, #exit-btn {
-    position: absolute;
+    position: fixed;
 }
 
 #exit-btn {
