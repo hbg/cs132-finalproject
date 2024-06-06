@@ -57,6 +57,10 @@ main section {
     overflow: auto;
 }
 
+select {
+    border: 1px solid black;
+}
+
 header, footer, main article {
     align-items: center;
 }
@@ -92,7 +96,7 @@ header a, button {
     transition: 200ms ease-in-out all;
 }
 
-main > section, #actions a:hover, #cart-container {
+main > section, #actions a:hover, #cart-container, select {
     background-color: white;
 }
 
@@ -105,7 +109,6 @@ header a:hover {
 }
 
 .btn {
-    width: 100%;
     border: 0;
 }
 
@@ -164,7 +167,7 @@ footer {
     right: 0;
 }
 
-#products-article, #cart-container {
+#cart-container {
     min-width: 200px;
 }
 

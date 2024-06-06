@@ -15,8 +15,12 @@
     padding: 16px;
 }
 
-#products article, article button {
+#product-view-container > label ,#products article, article button {
     font-size: 16pt;
+}
+
+#product-view-container select {
+    font-size: 14pt;
 }
 
 article button {
