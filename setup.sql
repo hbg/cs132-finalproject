@@ -8,7 +8,6 @@
     contact messages sent by users of the sites.
 */
 
-CREATE DATABASE IF NOT EXISTS storedb;
 USE heroku_8ad1b008d1bd7df;
 
 CREATE TABLE IF NOT EXISTS admin_accounts (
