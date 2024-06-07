@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS contact_messages (
     msg         TEXT NOT NULL
 );
 
+-- Admin user with email "admin@test.edu" and password "password".
 INSERT INTO admin_accounts (email, password_hash) VALUES
 ("admin@test.edu", "$2b$10$v5k9r7Qc7CLV.gVIVIO3Ke02.GbJnZ3Nb2Rf9orqNnnqzA/OKn526");
 
