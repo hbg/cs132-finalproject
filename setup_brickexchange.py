@@ -1,6 +1,8 @@
 import requests
 import random
 
+# This script was used to generate example products in an efficient fashion,
+# rather than typing everything out manually.
 
 prices = {
     "6211-1": 400,
