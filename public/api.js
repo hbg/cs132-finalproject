@@ -23,10 +23,7 @@ const CONTACT_ROUTE = BASE_URL + "contact";
 const FAQ_ROUTE = BASE_URL + "faq";
 const INDIV_PRODUCT_ROUTE = BASE_URL + "product";
 const PURCHASE_ROUTE = BASE_URL + "purchase";
-const ERROR_RESPONSE = {
-    "status_message": "An unknown error occurred.",
-    "success": false
-}
+const ERROR_RESPONSE = "An unknown error occurred.";
 
 /**
  * Retrieves products from a specified store using the API.
@@ -40,7 +37,7 @@ async function getProducts(storeName) {
         let resp = await fetch(url, {
             method: "GET"
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
@@ -59,15 +56,16 @@ async function getProducts(storeName) {
  */
 async function getProductsByCategory(storeName, category) {
     try {
-        let url = PRODUCT_CAT_LIST_ROUTE + `?store_name=${storeName}&category=${category}`;
+        let url = PRODUCT_CAT_LIST_ROUTE +
+                 `?store_name=${storeName}&category=${category}`;
         let resp = await fetch(url, {
             method: "GET"
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
-        handleError(err);
+        // handleError(err);
         return [];
     }
 }
@@ -85,11 +83,11 @@ async function getCategories(storeName) {
         let resp = await fetch(url, {
             method: "GET"
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
-        handleError(err);
+        // handleError(err);
         return [];
     }
 }
@@ -107,12 +105,12 @@ async function getFAQ(storeName) {
         let resp = await fetch(url, {
             method: "GET"
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
-        handleError(err);
-        return ERROR_RESPONSE;
+        // handleError(err);
+        return {};
     }
 }
 
@@ -128,12 +126,11 @@ async function getProduct(productId) {
         let resp = await fetch(url, {
             method: "GET"
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
-        handleError(err);
-        return ERROR_RESPONSE;
+        return handleError(err);
     }
 }
 
@@ -158,12 +155,11 @@ async function login(email, password) {
                 "password": password
             })
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
-        handleError(err);
-        return ERROR_RESPONSE;
+        return handleError(err);
     }
 }
 
@@ -191,12 +187,11 @@ async function contact(storeName, email, message) {
                 "message": message
             })
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
-        handleError(err);
-        return ERROR_RESPONSE;
+        return handleError(err);
     }
 }
 
@@ -220,12 +215,11 @@ async function purchase(cart) {
                 "cart": JSON.stringify(cart)
             })
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
-        handleError(err);
-        return ERROR_RESPONSE;
+        return handleError(err);
     }
 }
 
@@ -241,12 +235,11 @@ async function isLoggedIn() {
         let resp = await fetch(url, {
             method: "GET"
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data.logged_in;
     } catch (err) {
-        handleError(err);
-        return ERROR_RESPONSE;
+        return handleError(err);
     }
 }
 
@@ -273,6 +266,9 @@ async function createProduct(
     category
 ) {
     try {
+        if (quantity < 0) {
+            throw Error("Quantity must be non-negative!")
+        }
         let url = PRODUCT_CREATE_ROUTE;
         let resp = await fetch(url, {
             method: "POST",
@@ -289,12 +285,11 @@ async function createProduct(
                 "category": category
             })
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
-        handleError(err);
-        return ERROR_RESPONSE;
+        return handleError(err);
     }
 }
 
@@ -322,6 +317,9 @@ async function editProduct(
     category
 ) {
     try {
+        if (quantity < 0) {
+            throw Error("Quantity must be non-negative!")
+        }
         let url = PRODUCT_EDIT_ROUTE;
         let resp = await fetch(url, {
             method: "POST",
@@ -338,12 +336,11 @@ async function editProduct(
                 "category": category
             })
         });
-        resp = checkStatus(resp);
+        resp = await checkStatusV2(resp);
         const data = await resp.json();
         return data;
     } catch (err) {
-        handleError(err);
-        return ERROR_RESPONSE;
+        return handleError(err);
     }
 }
 
@@ -353,5 +350,5 @@ async function editProduct(
  * @param {Error} err - The error being handled
  */
 function handleError(err) {
-    console.log(err);
+    return {"status_message": err.message ?? ERROR_RESPONSE, "success": false};
 }

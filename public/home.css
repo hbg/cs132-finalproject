@@ -27,7 +27,7 @@ article button {
     background-color: green;
 }
 
-article button:hover {
+article button:enabled:hover {
     background-color: darkgreen;
 }
 

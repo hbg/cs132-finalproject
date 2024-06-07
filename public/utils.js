@@ -1,7 +1,7 @@
 /**
  * CS 132
  * Provided global DOM accessor aliases.
- * These are the ONLY functions that should be global in your submissions.
+ * Some functions added for BrickExchange.
  */
 
 /**
@@ -97,4 +97,22 @@ async function updateHeaderAdmin() {
         loginBtn.textContent = "LOG OUT";
         loginBtn.href = "/admin/logout";
     }
+}
+
+/**
+ * Helper function that returns Response data on success, otherwise
+ * returns an Error with a name given by the response's status_message attribute.
+ * Adapted from checkStatus() method provided above.
+ *
+ * @param {object} response - response with status to check for success/error.
+ * @returns {object} - The Response object if successful, otherwise an Error that
+ * needs to be caught.
+ *
+ */
+async function checkStatusV2(response) {
+    if (!response.ok) { // response.status >= 200 && response.status < 300
+        let resJson = await response.json();
+        throw Error(`${resJson.status_message ?? "An unknown error occurred..."}`);
+    } // else, we got a response back with a good status code (e.g. 200)
+    return response; // A resolved Response object.
 }
