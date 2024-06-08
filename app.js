@@ -2,7 +2,7 @@
 
 /**
  * @author Harris Beg, Maddie Ramos
- * CS132 Spring 2022
+ * CS132 Spring 2024
  * 
  * Final Project - Storefront API
  * 
